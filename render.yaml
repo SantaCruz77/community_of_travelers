@@ -1,0 +1,20 @@
+databases:
+  - name: community_of_travelers_production
+    databaseName: community_of_travelers_production
+    user: community_of_travelers
+    region: singapore
+
+services:
+  - type: web
+    name: community_of_travelers_production
+    env: ruby
+    region: singapore
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: <%= ENV['DATABASE_URL'] %>
+        fromDatabase:
+          name: render_app
+          property: connectionString
+      - key: <%= ENV['RAILS_MASTER_KEY'] %>
+        sync: false
