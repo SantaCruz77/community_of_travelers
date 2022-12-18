@@ -15,6 +15,9 @@ gem "bootsnap", require: false
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
+gem "bootstrap", "~> 4.5"
+gem "jquery-rails"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
