@@ -12,6 +12,9 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false
 
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
