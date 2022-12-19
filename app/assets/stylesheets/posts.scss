@@ -16,7 +16,24 @@ h3 {
   gap: 10px;
 }
 
-@media (max-width: 1500px) {
+.comments-index {
+  background-color: white;
+  border: 1px black solid;
+}
+
+.comment-delete {
+  margin-left: auto;
+  :hover {
+    text-decoration: none;
+  }
+}
+
+.comments {
+  margin-top: 40px;
+}
+
+
+@media (max-width: 1200px) {
   .form-group {
     width: 600px;
   }
@@ -26,12 +43,29 @@ h3 {
   }
 }
 
+  /* 旅行投稿詳細レスポンシブデザイン */
+
+  .comments {
+    margin-left: 50px;
+  }
+
 @media (max-width: 599px) {
   .form-group {
     width: 350px;
   }
 
   #file-select-btn {
+    width: 350px;
+  }
+  /* 旅行投稿詳細レスポンシブデザイン */
+
+  img {
+    width: 330px;
+    height: 220px;
+    align-items: center;
+  }
+  
+  .d-flex {
     width: 350px;
   }
 }

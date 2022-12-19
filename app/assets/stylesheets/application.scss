@@ -122,14 +122,13 @@ header {
 
 /* ここまで */
 
-
- html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: lightgrey;
- }
+html, body {
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+background-color: lightgrey;
+}
 
 img {
   box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
@@ -139,11 +138,11 @@ p {
   font-weight: bold;
 }
 
- .profiler-results {
-  display: none;
- }
+.profiler-results {
+display: none;
+}
 
- .row {
-  justify-content: center;
- }
- 
+.row {
+justify-content: center;
+}
+

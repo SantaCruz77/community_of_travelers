@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   root :to => 'homes#top'
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
 end
