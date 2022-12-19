@@ -20,6 +20,9 @@ gem "jquery-rails"
 
 gem "devise"
 
+gem "kaminari"
+gem 'bootstrap4-kaminari-views'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end

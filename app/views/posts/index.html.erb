@@ -8,6 +8,7 @@
         <div class="one-post">
           <p>ユーザ名</p>
           <%= link_to post_path(post) do %>
+            <p><%= post.id %></p>
             <%= attachment_image_tag post, :image, format: 'jpeg', size: '300x200' %>
           <% end %>
           <p></p>
@@ -15,5 +16,6 @@
         </div>
       <% end %>
     </div>
+    <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
