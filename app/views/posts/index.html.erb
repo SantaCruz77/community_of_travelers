@@ -4,6 +4,15 @@
       <h3>旅行投稿一覧</h3>
     </div>
     <div class="row">
+      <%= form_with url: posts_path, method: :get, local: true do |f| %>
+        <div class="d-flex mt-3 mb-3">
+          <%= f.text_field :search, id: "txt-search", class: "form-control input-group-prepend", placeholder: "キーワードを入力" %>
+          <%= f.submit '検索', name: nil, id: "btn-search", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="row">
       <% @posts.each do |post| %>
         <div class="one-post">
           <p><%= post.user.name %></p>
