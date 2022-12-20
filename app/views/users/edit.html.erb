@@ -11,7 +11,8 @@
         </div>
         <div class="formgroup">
           <label class="form-label mt-3">プロフィール画像</label><br>
-          <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.png", class: "profile-img" %><br>
+          <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.png", class: "profile-img" %>
+          <p></p>
           <%= f.file_field :profile_image, placeholder: "プロフィール画像", class: "btn btn-dark" %>
         </div>
         <div class="formgroup">
