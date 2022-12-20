@@ -12,6 +12,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false
 
+gem "dotenv-rails"
+
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
@@ -19,9 +21,12 @@ gem "bootstrap", "~> 4.5"
 gem "jquery-rails"
 
 gem "devise"
+#gem "devise-i18n"
 
 gem "kaminari"
 gem 'bootstrap4-kaminari-views'
+
+#gem "rails-i18n"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -35,8 +40,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-end
-
-group :production do
-  gem "dotenv-rails"
 end
