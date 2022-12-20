@@ -21,12 +21,12 @@ gem "bootstrap", "~> 4.5"
 gem "jquery-rails"
 
 gem "devise"
-#gem "devise-i18n"
+gem "devise-i18n"
 
 gem "kaminari"
 gem 'bootstrap4-kaminari-views'
 
-#gem "rails-i18n"
+gem "rails-i18n"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
