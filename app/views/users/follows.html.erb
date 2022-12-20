@@ -1,0 +1,22 @@
+<div class="cover-user-index">
+  <div class="container">
+    <div class="row">
+      <h3>フォロー一覧</h3>
+    </div>
+    <div class="row">
+      <% @users.each do |user| %>
+        <div class="one-post card w-100">
+          <%= link_to user_path(user) do %>
+            <p><%= user.name %></p>
+            <div class="d-flex">
+              <%= attachment_image_tag @user, :profile_image, format: 'jpeg', size: '50x50', fallback: "no_image.png", class: "mb-3 mt-3 ml-3 profile-img" %>
+              <p ><%= user.profile %></p>
+            </div>
+            <p><%= "#{user.posts.count} 投稿" %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= paginate @users, theme: 'twitter-bootstrap-4' %>
+  </div>
+</div>

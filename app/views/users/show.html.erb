@@ -8,15 +8,34 @@
       <% end %>
     </div>
 
-    <% if user_signed_in? && @user == current_user %>
-      <p class="d-flex justify-content-end">
-        <%= link_to 'プロフィール画像', edit_user_path(@user), class: "btn-sm btn-success" %>
-      </p>
-    <% end %>
-    <div class="d-flex">
-      <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.png", class: "mb-3 profile-img" %>
-      <h4 class="ml-3 mb-3 card w-100"><%= @user.profile %></h4>
-    </div>
+    <p class="d-flex justify-content-end">
+      <% if user_signed_in? && @user == current_user %>
+        <%= link_to 'プロフィール編集', edit_user_path(@user), class: "btn-sm btn-success" %>
+      <% end %>
+      <% if current_user != @user %>
+        <% if current_user.following?(@user) %>
+          <%= link_to 'フォローを外す', user_relationships_path(@user.id), data: { turbo_method: :delete }, class: "btn-sm btn-danger" %>
+        <% else %>
+          <%= link_to 'フォローする', user_relationships_path(@user.id), data: { turbo_method: :post }, class: "btn-sm btn-success" %>
+        <% end %>
+      <% end %>
+    </p>
+
+    
+      <div class="ml-3 mb-3 card w-100">
+        <div class="d-flex">
+          <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.png", class: "mb-3 mt-3 ml-3 profile-img" %>
+          <h4 class="ml-5 mt-5"><%= @user.profile %></h4>
+        </div>
+        <div class="d-flex">
+          <%= link_to follows_user_path(@user) do %>
+            <h6>フォロー <%= @following_users.count %></h6>
+          <% end %>&nbsp;&nbsp;
+          <%= link_to followers_user_path(@user) do %>
+            <h6>フォロワー <%= @follower_users.count %></h6>
+          <% end %>
+        </div>
+      </div>  
 
     <div class="row">
       <% @posts.each do |post| %>
