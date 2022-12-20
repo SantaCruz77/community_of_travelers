@@ -1,4 +1,8 @@
 class Post < ApplicationRecord
+  validates :location, presence: true, length: { maximum: 10 }
+  validates :text, presence: true, length: { maximum: 100 }
+  validates :image, presence: true
+
   attachment :image
 
   belongs_to :user

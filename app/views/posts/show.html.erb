@@ -3,6 +3,14 @@
     <div class="row">
       <h3 >旅行投稿詳細</h3>
     </div>
+    <% if @comment.errors.any? %>
+      <div class="card text-center card text-white bg-danger pt-0 mt-3 mb-3">
+        <%= @comment.errors.count %>件のエラーが発生しました
+        <% @comment.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      </div>
+    <% end %>
     <div class="row">
       <div class="d-flex flex-column flex-md-row">
         <div class="row d-block">
@@ -25,8 +33,10 @@
           <h4>感想</h4>
           <p><%= @post.text %></p>
           <div class="buttons">
-            <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-primary" %>
-            <%= button_to '削除する', post_path(@post.id), { method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } }, class: "btn btn-danger" } %>
+            <% if @post.user == current_user %>
+              <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info" %>
+              <%= button_to '削除する', post_path(@post.id), { method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } }, class: "btn btn-danger" } %>
+            <% end %>
             <%= link_to '投稿一覧ページへ', posts_path, class: "btn btn-dark" %>
           </div>
         </div>
