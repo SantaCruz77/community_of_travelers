@@ -18,49 +18,51 @@
 
 .comment-delete {
   margin-left: auto;
-  :hover {
-    text-decoration: none;
-  }
+}
+
+.form-group {
+  width: 600px;
+}
+
+#file-select-btn {
+  width: 600px;
 }
 
 .comments {
-  margin-top: 40px;
+  width: 420px;
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
+#comment_comment {
+  width: 420px;
+}
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 767px) {
   .form-group {
-    width: 600px;
+    width: 360px;
   }
 
   #file-select-btn {
-    width: 600px;
+    width: 360px;
   }
-}
-
-  /* 旅行投稿詳細レスポンシブデザイン */
-
-  .comments {
-    margin-left: 50px;
-  }
-
-@media (max-width: 599px) {
-  .form-group {
-    width: 350px;
-  }
-
-  #file-select-btn {
-    width: 350px;
-  }
-  /* 旅行投稿詳細レスポンシブデザイン */
 
   img {
-    width: 330px;
-    height: 220px;
+    width: 360px;
+    height: 240px;
     align-items: center;
   }
   
+  .comments {
+    width: 360px;
+    margin-left: 0px;
+  }
+
+  #comment_comment {
+    width: 360px;
+  }
+
   .d-flex {
-    width: 350px;
+    margin-left: 30px;
   }
 }

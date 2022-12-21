@@ -16,8 +16,55 @@
 
 @import "bootstrap";
 
-/* ここから */
-/* ハンバーガーメニュー追記 */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+  }
+  
+  img {
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  p {
+    font-weight: bold;
+  }
+  
+  hr {
+    margin: 5px 0px;
+  }
+  
+  .profiler-results {
+  display: none;
+  }
+  
+  .row {
+  justify-content: center;
+  }
+  
+  h3 {
+    font-weight: bold;
+    padding-top: 10px;
+  }
+  
+  .cover {
+    width: 100%;
+    height: 100%;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+
+/* menu -------------------------------------------------------- */
 
 .menu {
   color: black;
@@ -28,7 +75,6 @@
   text-decoration: none;
 }
 
-/* ここまで */
 header {
   padding:10px;
   background: black;
@@ -39,12 +85,10 @@ header {
   margin-left: 0px;
 }
 
-/*チェックボックス等は非表示に*/
 .nav-unshown {
   display:none;
 }
 
-/*アイコンのスペース*/
 #nav-open {
   display: inline-block;
   width: 30px;
@@ -53,11 +97,10 @@ header {
   margin-top: 15px;
 }
 
-/*ハンバーガーの形をCSSで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
   position: absolute;
-  height: 3px;/*線の太さ*/
-  width: 25px;/*長さ*/
+  height: 3px;
+  width: 25px;
   border-radius: 3px;
   background: white;
   display: block;
@@ -71,7 +114,6 @@ header {
   bottom: -16px;
 }
 
-/*閉じる用の薄黒箇所*/
 #nav-close {
   display: none;
   position: fixed;
@@ -85,7 +127,6 @@ header {
   transition: .3s ease-in-out;
 }
 
-/*メニューの中身*/
 #nav-content {
   overflow: auto;
   position: fixed;
@@ -93,7 +134,7 @@ header {
   left: 0;
   z-index: 9999;
   width: 90%;
-  max-width: 120px;/*最大幅（お好みで調整を）*/
+  max-width: 120px;
   height: auto;
   border-radius: 3%;
   background: whitesmoke;
@@ -102,7 +143,6 @@ header {
   transform: translateX(-105%);
 }
 
-/*チェックがついたら表示させる*/
 #nav-input:checked ~ #nav-close {
   display: block;
   opacity: .5;
@@ -127,55 +167,8 @@ header {
  -ms-flex-direction: row;
 }
 
-/*ロゴやサイトタイトルをセンタリング*/
 .logo-area {
   text-align: center;
   margin: 0 auto;
 }
-/* ここまで */
-
-html, body {
-width: 100%;
-height: 100%;
-margin: 0;
-padding: 0;
-background-color: lightgrey;
-}
-
-img {
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
-}
-
-.profile-img {
-  border-radius: 50%;
-}
-
-p {
-  font-weight: bold;
-}
-
-hr {
-  margin: 5px 0px;
-}
-
-.profiler-results {
-display: none;
-}
-
-.row {
-justify-content: center;
-}
-
-h3 {
-  font-weight: bold;
-  padding-top: 10px;
-}
-
-.cover {
-  width: 100%;
-  height: 100%;
-}
-
-a:hover {
-  text-decoration: none;
-}
+/* end of menu --------------------------------------- */

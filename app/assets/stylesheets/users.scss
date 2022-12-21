@@ -1,2 +1,20 @@
+@media only screen and (max-width: 767px) {
+  
+  .container {
+    align-items: center;
+  }
+  .one-post {
+    width: 360px;
+  }
 
+  .d-flex {
+    width: 360px;
+  }
+
+  h4.ml-5 {
+    width: 150px;
+    font-size: 18px;
+    word-wrap: break-word;
+  }
+}
 
